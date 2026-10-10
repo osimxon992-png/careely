@@ -148,7 +148,7 @@ export default function Home() {
               {CATEGORIES.map(([key]) => (
                 <span key={key} className="flex items-center text-2xl font-medium tracking-tight text-text sm:text-3xl">
                   <span className="px-7">{t(key)}</span>
-                  <Asterisk className="h-6 w-6 text-primary" />
+                  <Asterisk className="animate-spin-slow h-6 w-6 text-primary" />
                 </span>
               ))}
             </div>

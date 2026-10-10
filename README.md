@@ -38,6 +38,15 @@ until you connect a real project.
    to your own dev database — it's commented out by default since it needs
    real `auth.users` ids first.
 5. In Supabase Auth settings, enable email confirmations as desired.
+6. (Optional) Google sign-in:
+   - In Google Cloud Console → APIs & Services → Credentials, create an
+     OAuth client ID (Web application) with the authorized redirect URI
+     `https://<project-ref>.supabase.co/auth/v1/callback`.
+   - In Supabase → Authentication → Providers → Google, enable it and paste
+     the client ID and secret.
+   - In Supabase → Authentication → URL Configuration, add
+     `http://localhost:5173/auth/callback` and your production
+     `https://<your-domain>/auth/callback` to the redirect URLs.
 
 ## AI features
 

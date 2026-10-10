@@ -25,6 +25,7 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Onboarding from "./pages/auth/Onboarding";
+import AuthCallback from "./pages/auth/AuthCallback";
 
 import Dashboard from "./pages/seeker/Dashboard";
 import Profile from "./pages/seeker/Profile";
@@ -65,6 +66,7 @@ export default function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/auth/callback" element={<AuthCallback />} />
               <Route
                 path="/onboarding"
                 element={

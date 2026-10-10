@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { UserRound, Building2 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import AuthLayout from "../../components/AuthLayout";
+import GoogleButton from "../../components/GoogleButton";
 
 const ROLES = [
   ["seeker", "Job Seeker", "I'm looking for a job", UserRound],
@@ -41,29 +42,32 @@ export default function Signup() {
         </p>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div>
-          <p className="label">I am a…</p>
-          <div className="grid grid-cols-2 gap-3">
-            {ROLES.map(([value, label, hint, Icon]) => (
-              <button
-                type="button"
-                key={value}
-                onClick={() => setRole(value)}
-                aria-pressed={role === value}
-                className={`flex flex-col items-start gap-2 rounded-2xl border-2 p-4 text-left transition ${
-                  role === value
-                    ? "border-primary bg-primary/5"
-                    : "border-border hover:border-slate-300"
-                }`}
-              >
-                <Icon className={`h-6 w-6 ${role === value ? "text-primary" : "text-slate-400"}`} />
-                <span className="font-bold text-text">{label}</span>
-                <span className="text-xs text-muted">{hint}</span>
-              </button>
-            ))}
-          </div>
+      <div className="mb-6">
+        <p className="label">I am a…</p>
+        <div className="grid grid-cols-2 gap-3">
+          {ROLES.map(([value, label, hint, Icon]) => (
+            <button
+              type="button"
+              key={value}
+              onClick={() => setRole(value)}
+              aria-pressed={role === value}
+              className={`flex flex-col items-start gap-2 rounded-2xl border-2 p-4 text-left transition ${
+                role === value
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:border-slate-300"
+              }`}
+            >
+              <Icon className={`h-6 w-6 ${role === value ? "text-primary" : "text-slate-400"}`} />
+              <span className="font-bold text-text">{label}</span>
+              <span className="text-xs text-muted">{hint}</span>
+            </button>
+          ))}
         </div>
+      </div>
+
+      <GoogleButton role={role} label="Sign up with Google" />
+
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label className="label" htmlFor="signup-email">Email</label>
           <input

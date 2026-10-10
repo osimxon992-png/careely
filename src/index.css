@@ -46,6 +46,7 @@
   --shadow-lift: 0 1px 2px rgb(15 19 16 / 0.05), 0 24px 48px -20px rgb(15 19 16 / 0.28);
 
   --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin-slow 6s linear infinite;
 }
 
 :root {
@@ -234,6 +235,12 @@ h4 {
   }
 }
 
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -260,5 +267,14 @@ h4 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Keep the category marquee moving even with reduced motion */
+  .animate-marquee {
+    animation: var(--animate-marquee) !important;
+  }
+
+  .animate-spin-slow {
+    animation: var(--animate-spin-slow) !important;
   }
 }

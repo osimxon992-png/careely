@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/AuthContext";
 import AuthLayout from "../../components/AuthLayout";
+import GoogleButton from "../../components/GoogleButton";
 
 export default function Login() {
   const { signIn, isConfigured } = useAuth();
@@ -34,6 +35,8 @@ export default function Login() {
           See README for setup instructions.
         </p>
       )}
+
+      <GoogleButton />
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
